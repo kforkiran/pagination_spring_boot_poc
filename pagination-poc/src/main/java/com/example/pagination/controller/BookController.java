@@ -19,11 +19,6 @@ public class BookController {
 
     @GetMapping("/books")
     public BookPageResponse getBooks(Pageable pageable) {
-        System.out.println(pageable.getPageNumber());
-        System.out.println(pageable.getSort());
-        System.out.println(pageable.getPageSize());
-        System.out.println(pageable.getOffset());
-        System.out.println(pageable.getSort().get().collect(Collectors.toList()));
         return booksService.getBooks(pageable);
     }
 }
